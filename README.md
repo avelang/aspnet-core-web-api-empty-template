@@ -12,4 +12,5 @@ Sample aspnet core web api from empty template
       Inside public void Configure(IApplicationBuilder app, IWebHostEnvironment env)            
       Add the line endpoints.MapControllers(); inside 
              app.UseEndpoints(endpoints => {    //code here      });
-4. TODO - fix launchURL in the launchsettings.json(Properties folder) file             
+4. TODO - fix launchURL in the launchsettings.json(Properties folder) file        
+5. TODO - Add functionality to accept an array of integers and return the average. Refactor this.
