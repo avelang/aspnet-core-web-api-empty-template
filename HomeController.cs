@@ -15,9 +15,28 @@ namespace aspnet_core_web_api_empty_template
 
         }
         [HttpGet]
-        public string get()
+        [Route("[action]")]
+        public string Index()
         {
-            return "Hello from Home";
+            decimal totSum = 0, count = 0;
+
+            try
+            {
+                var inputString = Request.QueryString.Value.ToString().Replace("?q=", "").Split(",");
+                foreach (var x in inputString)
+                {
+                    totSum += Convert.ToInt32(x);
+                    count++;
+                }
+
+                return String.Format("Average is : {0}", totSum/count);
+            }
+            catch (Exception)
+            {
+
+                return "Input is in incorrect format";
+            }
+
         }
     }
 }
